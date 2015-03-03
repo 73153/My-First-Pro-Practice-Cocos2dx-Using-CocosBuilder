@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+	<dict>
+		<key>powerSprName</key>
+		<string>gunIcon.png</string>
+		<key>powerName</key>
+		<string>Bullet</string>
+		<key>powerDetail</key>
+		<string>Break the brick in one hit, when fired from the paddle and hit the brick.</string>
+	</dict>
+	<dict>
+		<key>powerSprName</key>
+		<string>multiballIcons.png</string>
+		<key>powerName</key>
+		<string>Multiple Balls</string>
+		<key>powerDetail</key>
+		<string>Balls will get increased on the screen to play with more than one ball, Till 15 seconds.</string>
+	</dict>
+	<dict>
+		<key>powerSprName</key>
+		<string>autoplayIcon.png</string>
+		<key>powerName</key>
+		<string>Auto play mode</string>
+		<key>powerDetail</key>
+		<string> The ball will not go down, until this power is active, even the player paddle left the ball. </string>
+	</dict>
+	<dict>
+		<key>powerSprName</key>
+		<string>bonuslifeIcon.png</string>
+		<key>powerName</key>
+		<string>Bonus life</string>
+		<key>powerDetail</key>
+		<string>Player life count will get increment to the current player life.</string>
+	</dict>
+	<dict>
+		<key>powerSprName</key>
+		<string>bonus100points.png</string>
+		<key>powerName</key>
+		<string>Bonus points</string>
+		<key>powerDetail</key>
+		<string>The player score will incremented by 100.</string>
+	</dict>
+	<dict>
+		<key>powerSprName</key>
+		<string>Enlargemax.png</string>
+		<key>powerName</key>
+		<string>Large paddle width</string>
+		<key>powerDetail</key>
+		<string>Paddle size will get increased by 10%. Until this power is active.</string>
+	</dict>
+	<dict>
+		<key>powerSprName</key>
+		<string>decreaseBallSpeed.png</string>
+		<key>powerName</key>
+		<string>Slow ball speed</string>
+		<key>powerDetail</key>
+		<string>The ball speed will be slowed. Until this power is active.</string>
+	</dict>
+	<dict>
+		<key>powerSprName</key>
+		<string>magnetForPaddle.png</string>
+		<key>powerName</key>
+		<string>Magnet</string>
+		<key>powerDetail</key>
+		<string>The ball will get reset to the the paddle center position, We can reset the ball position by moving the paddle. Now tap to start the ball move.</string>
+	</dict>
+	<dict>
+		<key>powerSprName</key>
+		<string>reverseBallYItem.png</string>
+		<key>powerName</key>
+		<string>Reverse ball</string>
+		<key>powerDetail</key>
+		<string>On getting this power, The ball movement will reverse vertically.</string>
+	</dict>
+	<dict>
+		<key>powerSprName</key>
+		<string>shortenPaddleItem.png</string>
+		<key>powerName</key>
+		<string>Short paddle width</string>
+		<key>powerDetail</key>
+		<string>The player paddle size will get decrement by 10%,  Until this power is active.</string>
+	</dict>
+	<dict>
+		<key>powerSprName</key>
+		<string>speed-increaseIcon.png</string>
+		<key>powerName</key>
+		<string>Increase Ball Speed</string>
+		<key>powerDetail</key>
+		<string>The ball speed will Increased. Until this power is active.</string>
+	</dict>
+</array>
+</plist>
