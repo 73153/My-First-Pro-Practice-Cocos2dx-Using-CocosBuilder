@@ -6,7 +6,6 @@
 #include "../AppDelegate/AppMacros.h"
 #include "../Layers/MenuLayerLoader.h"
 #include "../GameManager/GameManager.h"
-#include "../OBJCall/ObjCCalls.h"
 
 float AppDelegate::SCREEN_WIDTH         = 640;
 float AppDelegate::SCREEN_HEIGHT        = 960;
@@ -27,10 +26,7 @@ AppDelegate::~AppDelegate()
 
 bool AppDelegate::applicationDidFinishLaunching()
 {
-    ObjCCalls::showActivityIndictor();
     
-    //    ObjCCalls::loadMoreAppsData();
-    ObjCCalls::startAppsCue();
     CCSize frameSize = CCDirector::sharedDirector()->getWinSize();
     CCLOG("Window Size %f and %f",frameSize.width,frameSize.height);
     // initialize director
@@ -42,7 +38,6 @@ bool AppDelegate::applicationDidFinishLaunching()
     GameManager::sharedGameManager()->initialize();
     GameManager::sharedGameManager()->read_data();
     
-    ObjCCalls::gameCenterLogin();
 //    pDirector->setDisplayStats(true);
     // set FPS. the default value is 1.0/60 if you don't call this
     this->setPathForResources();

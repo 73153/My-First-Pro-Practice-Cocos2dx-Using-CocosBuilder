@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>1BB38063-0BD8-426C-87EC-93A2F1965EB8</string>
+	<key>IDESourceControlProjectName</key>
+	<string>Bricks</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>C23C5FF3F50E7C82A8D8DDE1AB018CDE27444884</key>
+		<string>https://github.com/vivek73153/Blaster_Breakout.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>proj.ios/Bricks.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>C23C5FF3F50E7C82A8D8DDE1AB018CDE27444884</key>
+		<string>../../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/vivek73153/Blaster_Breakout.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>C23C5FF3F50E7C82A8D8DDE1AB018CDE27444884</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>C23C5FF3F50E7C82A8D8DDE1AB018CDE27444884</string>
+			<key>IDESourceControlWCCName</key>
+			<string>Bricks</string>
+		</dict>
+	</array>
+</dict>
+</plist>

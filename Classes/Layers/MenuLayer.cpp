@@ -1,23 +1,6 @@
 
 #include "../Layers/MenuLayer.h"
-#include "../GameScreen/GameLayer.h"
-#include "../Layers/SettingLayer.h"
-#include "../Layers/MonumentSelectionLayer.h"
-#include "../Layers/LeaderBoardLayer.h"
 #include "../GameManager/GameManager.h"
-#include "../Layers/InAppPurchaseLayer.h"
-#include "../Layers/InAppPurchaseLayerLoader.h"
-#include "../Layers/LeaderBoardLayerLoader.h"
-#include "../Layers/SettingLayerLoader.h"
-#include "../Layers/MonumentSelectionLayerLoader.h"
-#include "../Layers/MonumentSelectionLayer.h"
-#include "../Layers/MonumentSelectionLayerLoader.h"
-#include "../Layers/LevelSelectionLayer.h"
-#include "../Layers/LevelSelectionLayerLoader.h"
-#include "../ArcadeMode/GameLayerArcadeMode.h"
-#include "../ArcadeMode/GameLayerArcadeModeLoader.h"
-#include "HoldOnModel.h"
-
 
 using namespace cocos2d;
 MenuLayer::MenuLayer():moreBtn(NULL),settingBtn(NULL),settingLbl(NULL),moreLbl(NULL),storeLabelDisplay(NULL),moreLayer(NULL),storeLayer(NULL),settingLayer(NULL),backWoodenBG(NULL),arcadeMenuItemSpr(NULL),challengeMenuItemSpr(NULL),getIsLevelClearArr(NULL){
@@ -58,11 +41,10 @@ void MenuLayer::menuQuit(CCObject* pSender) {
 }
 
 void MenuLayer::menuStart(CCObject* pSender) {
-    ObjCCalls::showActivityIndictor();
     
-    GameManager::sharedGameManager()->remove_unused_data();
-    CCScene *highScore_scene=GameManager::sharedGameManager()->get_scene("MonumentSelectionLayer.ccbi", "MonumentSelectionLayer",MonumentSelectionLayerLoader::loader(), CCScene::create(),false,false);
-   	CCDirector::sharedDirector()->replaceScene(CCTransitionTurnOffTiles::create(0.1,highScore_scene));
+//    GameManager::sharedGameManager()->remove_unused_data();
+//    CCScene *highScore_scene=GameManager::sharedGameManager()->get_scene("MonumentSelectionLayer.ccbi", "MonumentSelectionLayer",MonumentSelectionLayerLoader::loader(), CCScene::create(),false,false);
+//   	CCDirector::sharedDirector()->replaceScene(CCTransitionTurnOffTiles::create(0.1,highScore_scene));
 }
 
 int MenuLayer::getIsLevelCleared(int currentLevelNumber)
@@ -73,38 +55,34 @@ int MenuLayer::getIsLevelCleared(int currentLevelNumber)
     return status_id;
 }
 void MenuLayer::menuArcdeModeStart(cocos2d::CCObject *sender){
-    ObjCCalls::showActivityIndictor();
     
     GameManager::sharedGameManager()->remove_unused_data();
-    
-    CCScene *menuSetting_scene=GameManager::sharedGameManager()->get_scene("GameLayerArcadeMode.ccbi", "GameLayerArcadeMode",GameLayerArcadeModeLoader::loader(), CCScene::create(),false,false);
+  
+    CCScene *menuSetting_scene=GameManager::sharedGameManager()->get_scene("MainScene.ccbi", "MainScene",MainSceneLoader::loader(), CCScene::create(),false,false);
     CCDirector::sharedDirector()->replaceScene(CCTransitionTurnOffTiles::create(0.1,menuSetting_scene));
 }
 
 void MenuLayer::menuHelpClicked(CCObject *pSender) {
-    ObjCCalls::showActivityIndictor();
     
-    GameManager::sharedGameManager()->remove_unused_data();
-    CCScene *help_scene=GameManager::sharedGameManager()->get_scene("LeaderBoardLayer.ccbi", "LeaderBoardLayer", LeaderBoardLayerLoader::loader(), CCScene::create(),false,false);
-    CCDirector::sharedDirector()->replaceScene(CCTransitionTurnOffTiles::create(0.2,help_scene));
+//    GameManager::sharedGameManager()->remove_unused_data();
+//    CCScene *help_scene=GameManager::sharedGameManager()->get_scene("LeaderBoardLayer.ccbi", "LeaderBoardLayer", LeaderBoardLayerLoader::loader(), CCScene::create(),false,false);
+//    CCDirector::sharedDirector()->replaceScene(CCTransitionTurnOffTiles::create(0.2,help_scene));
     
 }
 
 void MenuLayer::menuMoreClicked(CCObject *pSender) {
-    ObjCCalls::showActivityIndictor();
     
-    GameManager::sharedGameManager()->remove_unused_data();
-    CCScene *highScore_scene=GameManager::sharedGameManager()->get_scene("InAppPurchaseLayer.ccbi", "InAppPurchaseLayer",InAppPurchaseLayerLoader::loader(), CCScene::create(),false,false);
-    CCDirector::sharedDirector()->replaceScene(CCTransitionTurnOffTiles::create(0.2,highScore_scene));
+//    GameManager::sharedGameManager()->remove_unused_data();
+//    CCScene *highScore_scene=GameManager::sharedGameManager()->get_scene("InAppPurchaseLayer.ccbi", "InAppPurchaseLayer",InAppPurchaseLayerLoader::loader(), CCScene::create(),false,false);
+//    CCDirector::sharedDirector()->replaceScene(CCTransitionTurnOffTiles::create(0.2,highScore_scene));
 }
 
 void MenuLayer::menuSetting(CCObject *pSender) {
-    ObjCCalls::showActivityIndictor();
     
-    GameManager::sharedGameManager()->remove_unused_data();
-    
-    CCScene *menuSetting_scene=GameManager::sharedGameManager()->get_scene("SettingLayer.ccbi", "SettingLayer", SettingLayerLoader::loader(), CCScene::create(),false,false);
-    CCDirector::sharedDirector()->replaceScene(CCTransitionTurnOffTiles::create(0.2,menuSetting_scene));
+//    GameManager::sharedGameManager()->remove_unused_data();
+//    
+//    CCScene *menuSetting_scene=GameManager::sharedGameManager()->get_scene("SettingLayer.ccbi", "SettingLayer", SettingLayerLoader::loader(), CCScene::create(),false,false);
+//    CCDirector::sharedDirector()->replaceScene(CCTransitionTurnOffTiles::create(0.2,menuSetting_scene));
 }
 #pragma  mark   TOUCHES    METHODS
 
@@ -132,40 +110,39 @@ void MenuLayer::getHighScoreFromFile() {
 }
 
 void MenuLayer::getControlModeFromFile() {
-    ;
-    if (haveSavedFile()) {
-        string cm = CCUserDefault::sharedUserDefault()->getStringForKey("ControlMode", "DAY");
-        if (cm == "DAY") {
-            SettingLayer::setControlMode(SettingLayer::Day);
-        }  if (cm == "NIGHT") {
-            SettingLayer::setControlMode(SettingLayer::Night);
-        }
-    }
+//    ;
+//    if (haveSavedFile()) {
+//        string cm = CCUserDefault::sharedUserDefault()->getStringForKey("ControlMode", "DAY");
+//        if (cm == "DAY") {
+//            SettingLayer::setControlMode(SettingLayer::Day);
+//        }  if (cm == "NIGHT") {
+//            SettingLayer::setControlMode(SettingLayer::Night);
+//        }
+//    }
 }
 
 
 void MenuLayer::ccTouchesBegan(CCSet *pTouches, CCEvent *event) {
-    CCTouch *myTouch = (CCTouch*) pTouches->anyObject();
-    CCPoint location = myTouch->getLocationInView();
-    location = CCDirector::sharedDirector()->convertToGL(location);
-    if(GameManager::sharedGameManager()->isNodeAtPoint(moreLayer, location)){
-        this->menuHelpClicked(NULL);
-        return;
-    }
-    if(GameManager::sharedGameManager()->isNodeAtPoint(settingLayer, location)){
-        this->menuSetting(NULL);
-        return;
-    }
-    if(GameManager::sharedGameManager()->isNodeAtPoint(storeLayer, location)){
-        this->menuMoreClicked(NULL);
-        return;
-    }
+//    CCTouch *myTouch = (CCTouch*) pTouches->anyObject();
+//    CCPoint location = myTouch->getLocationInView();
+//    location = CCDirector::sharedDirector()->convertToGL(location);
+//    if(GameManager::sharedGameManager()->isNodeAtPoint(moreLayer, location)){
+//        this->menuHelpClicked(NULL);
+//        return;
+//    }
+//    if(GameManager::sharedGameManager()->isNodeAtPoint(settingLayer, location)){
+//        this->menuSetting(NULL);
+//        return;
+//    }
+//    if(GameManager::sharedGameManager()->isNodeAtPoint(storeLayer, location)){
+//        this->menuMoreClicked(NULL);
+//        return;
+//    }
 }
 
 #pragma  mark   COCOSBUILDER INITITIALIZATION
 void MenuLayer::onNodeLoaded(cocos2d::CCNode * pNode,  cocos2d::extension::CCNodeLoader * pNodeLoader)
 {
-    ObjCCalls::hideActivityIndicator();
     
     getIsLevelClearArr = CCArray::create();
     getIsLevelClearArr->retain();

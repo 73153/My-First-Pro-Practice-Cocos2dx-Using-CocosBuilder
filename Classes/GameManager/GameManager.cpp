@@ -81,54 +81,54 @@ CCArray *GameManager::sortArray(CCArray *array)
 CCScene* GameManager::get_scene_at(int nIndex)
 {
     this->setcurrent_scene(nIndex);
-    switch(1)
-    {
-        case 1:{
-            SoundManager::sharedSoundManager()->loadSondEffect(1);
-            current_scene=nIndex;
-            CCLog("index:%d",nIndex);
-            //            CCSize winSize = CCDirector::sharedDirector()->getWinSize();
-            //            TargetPlatform platform = CCApplication::sharedApplication()->getTargetPlatform();
-            
-            return  get_scene("Level1.ccbi","GameLayer",GameLayerLoader::loader(), CCScene::create(),false,false);
-        }
-        case 2:{
-            current_scene=nIndex;
-            return  get_scene("Level46.ccbi","GameLayer",GameLayerLoader::loader(), CCScene::create(),false,false);
-            CCLog("index:%d",nIndex);
-            
-        }
-        case 3:{
-            current_scene=nIndex;
-            return  get_scene("Level3.ccbi","GameLayer",GameLayerLoader::loader(), CCScene::create(),false,false);
-            CCLog("index:%d",nIndex);
-            
-        }
-        case 4:{
-            current_scene=nIndex;
-            return  get_scene("Level4.ccbi","GameLayer",GameLayerLoader::loader(), CCScene::create(),false,false);
-            CCLog("index:%d",nIndex);
-        }
-        case 5:{
-            current_scene=nIndex;
-            return  get_scene("Level5.ccbi","GameLayer",GameLayerLoader::loader(), CCScene::create(),false,false);
-            CCLog("index:%d",nIndex);
-        }
-        case 6: {
-            current_scene=nIndex;
-            return  get_scene("Level6.ccbi","GameLayer",GameLayerLoader::loader(), CCScene::create(),false,false);
-            CCLog("index:%d",nIndex);
-        }
-        case 7:{
-            current_scene=nIndex;
-            return  get_scene("Level7.ccbi","GameLayer",GameLayerLoader::loader(), CCScene::create(),false,false);
-            CCLog("index:%d",nIndex);
-        }
-            
-        default:{
-            
-        }
-    }
+//    switch(1)
+//    {
+//        case 1:{
+////            SoundManager::sharedSoundManager()->loadSondEffect(1);
+//            current_scene=nIndex;
+//            CCLog("index:%d",nIndex);
+//            //            CCSize winSize = CCDirector::sharedDirector()->getWinSize();
+//            //            TargetPlatform platform = CCApplication::sharedApplication()->getTargetPlatform();
+//            
+//            return  get_scene("Level1.ccbi","GameLayer",GameLayerLoader::loader(), CCScene::create(),false,false);
+//        }
+//        case 2:{
+//            current_scene=nIndex;
+//            return  get_scene("Level46.ccbi","GameLayer",GameLayerLoader::loader(), CCScene::create(),false,false);
+//            CCLog("index:%d",nIndex);
+//            
+//        }
+//        case 3:{
+//            current_scene=nIndex;
+//            return  get_scene("Level3.ccbi","GameLayer",GameLayerLoader::loader(), CCScene::create(),false,false);
+//            CCLog("index:%d",nIndex);
+//            
+//        }
+//        case 4:{
+//            current_scene=nIndex;
+//            return  get_scene("Level4.ccbi","GameLayer",GameLayerLoader::loader(), CCScene::create(),false,false);
+//            CCLog("index:%d",nIndex);
+//        }
+//        case 5:{
+//            current_scene=nIndex;
+//            return  get_scene("Level5.ccbi","GameLayer",GameLayerLoader::loader(), CCScene::create(),false,false);
+//            CCLog("index:%d",nIndex);
+//        }
+//        case 6: {
+//            current_scene=nIndex;
+//            return  get_scene("Level6.ccbi","GameLayer",GameLayerLoader::loader(), CCScene::create(),false,false);
+//            CCLog("index:%d",nIndex);
+//        }
+//        case 7:{
+//            current_scene=nIndex;
+//            return  get_scene("Level7.ccbi","GameLayer",GameLayerLoader::loader(), CCScene::create(),false,false);
+//            CCLog("index:%d",nIndex);
+//        }
+//            
+//        default:{
+//            
+//        }
+//    }
     return NULL;
 }
 
@@ -199,15 +199,6 @@ CCScene* GameManager::get_scene(const char *pCCBFilename,const char *pCCNodename
     CCString *str2 = CCString::createWithFormat("%s","GameLayer");
     CCString *str3 = CCString::createWithFormat("%s","GameLayerArcadeMode");
     
-    
-    if(str_clsname->isEqual(str2)){
-        loader_map.insert(make_pair("AnimationLayer", AnimationLayerLoader::loader()));
-        loader_map.insert(make_pair("SettingLayer", SettingLayerLoader::loader()));
-    }
-    else if(str_clsname->isEqual(str3)){
-        loader_map.insert(make_pair("AnimationLayerArcadeMode",AnimationLayerLoaderArcadeMode::loader()));
-        loader_map.insert(make_pair("SettingLayer", SettingLayerLoader::loader()));
-    }
     layer = loadCCBFile(pCCBFilename, loader_map);
     isSettingAndAnimationLayerAdded=false;
     
@@ -219,14 +210,12 @@ CCScene* GameManager::get_scene(const char *pCCBFilename,const char *pCCNodename
           scene->addChild(layer);
       
         if(str_clsname->isEqual(str2)){
-            animationLayerObj=(AnimationLayer*)layer->getChildByTag(12345);
-            //            settingLayerObj=(SettingLayer*)layer->getChildByTag(6789);
             isSettingAndAnimationLayerAdded=true;
         }
         else if (str_clsname->isEqual(str3))
         {
             if(str_clsname->isEqual(str2)){
-                animationLayerArcadeModeObj=(AnimationLayerArcadeMode*)layer->getChildByTag(12345);
+          
                 //            settingLayerObj=(SettingLayer*)layer->getChildByTag(6789);
                 isSettingAndAnimationLayerAdded=true;
             }
@@ -535,9 +524,6 @@ void GameManager::removeDataOnClick()
 {
     if(isSettingAndAnimationLayerAdded==true)
     {
-        this->animationLayerObj->stopAllActions();
-        this->animationLayerObj->unscheduleAllSelectors();
-        animationLayerObj->removeAllChildrenWithCleanup(true);
         //        this->settingLayerObj->stopAllActions();
         //        this->settingLayerObj->unscheduleAllSelectors();
         //        settingLayerObj->removeAllChildrenWithCleanup(true);
@@ -546,8 +532,8 @@ void GameManager::removeDataOnClick()
 
 void GameManager::remove_unused_data()
 {
-    SoundManager::sharedSoundManager()->stopAllEffect();
-    SoundManager::sharedSoundManager()->unLoadSoundEffect(1);
+//    SoundManager::sharedSoundManager()->stopAllEffect();
+//    SoundManager::sharedSoundManager()->unLoadSoundEffect(1);
     //    SoundManager::sharedSoundManager()->stopNarrator();
     //    SoundManager::sharedSoundManager()->stopBackgroundSound();
     CCLayer *layer=(CCLayer*)this->current_layer;

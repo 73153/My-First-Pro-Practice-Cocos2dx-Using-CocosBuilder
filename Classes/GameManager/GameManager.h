@@ -4,21 +4,8 @@
 #include <iostream>
 #include "cocos2d.h"
 #include "cocos-ext.h"
-#include "../Layers/AnimationLayer.h"
-#include "../Layers/AnimationLayerLoader.h"
-#include  "../GameManager/common_function.h"
-#include "../SoundManager/SoundManager.h"
-#include "../GameScreen/GameLayer.h"
-#include "../GameScreen/GameLayerLoader.h"
-#include "../Shapes/ShapeLayer.h"
-#include "../Shapes/ShapeLayerLoader.h"
-#include "../Layers/SettingLayer.h"
-#include "../Layers/SettingLayerLoader.h"
-#include "../Layers/MonumentSelectionLayer.h"
-#include "../ArcadeMode/AnimationLayerLoaderArcadeMode.h"
-#include "../ArcadeMode/AnimationLayerArcadeMode.h"
-#include "../ArcadeMode/GameLayerArcadeMode.h"
 
+#include "common_function.h"
 
 USING_NS_CC;
 USING_NS_CC_EXT;
@@ -66,10 +53,6 @@ public:
     
     void initialize();
     void removeDataOnClick();
-     CC_SYNTHESIZE(AnimationLayer *,animationLayerObj,animationLayerObj);
-     CC_SYNTHESIZE(SettingLayer *,settingLayerObj,settingLayerObj);
-      CC_SYNTHESIZE(AnimationLayerArcadeMode *,animationLayerArcadeModeObj,animationLayerArcadeModeObj);
-//     CC_SYNTHESIZE(MonumentSelectionLayer *,monumentLayerObj,monumentLayerObj);
     //Get instance of singleton
     static GameManager* sharedGameManager();
     

@@ -6,6 +6,9 @@
 #include <string>
 #include "cocos2d.h"
 #include "cocos-ext.h"
+#include "../Layers/MainScene.h"
+#include "../Layers/MainSceneLoader.h"
+
 
 using namespace cocos2d;
 class MenuLayer:public  cocos2d::CCLayer
